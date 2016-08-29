@@ -1,2 +1,2 @@
-noinst_LIBRARIES = libknot.a
-libknot_a_SOURCES = knot.c
+noinst_LIBRARIES = libknotprotocol.a
+libknotprotocol_a_SOURCES = knot_protocol.c
