@@ -10,7 +10,13 @@
 #ifndef KNOT_TYPES_H
 #define KNOT_TYPES_H
 
-// TypeID definitions
+/* 
+ * This file defines the semantic for KNoT data types and unities
+ * used by KNoT data sources. 
+ *  
+ */
+
+// TypeIDs for basic units
 #define KNOT_TYPE_ID_NONE				0x0000
 #define KNOT_TYPE_ID_VOLTAGE				0x0001
 #define KNOT_TYPE_ID_CURRENT				0x0002
@@ -34,10 +40,17 @@
 #define KNOT_TYPE_ID_VOLUMEFLOW				0x0014
 #define KNOT_TYPE_ID_ENERGY				0x0015
 
-#define KNOT_TYPE_ID_PRESENCE				0xFFEF
-#define KNOT_TYPE_ID_SWITCH				0xFFF0
+// MAX TypeID for basic units
+#define KNOT_TYPE_ID_BASIC_MAX				(KNOT_TYPE_ID_ENERGY+1)
 
-#define KNOT_TYPE_ID_COMMAND				0xFFFE
+// TypeIDs for logical units
+#define KNOT_TYPE_ID_PRESENCE				0xFFF0
+#define KNOT_TYPE_ID_SWITCH				0xFFF1
+#define KNOT_TYPE_ID_COMMAND				0xFFF2
+
+// MAX TypeID for logic units
+#define KNOT_TYPE_ID_LOGIC_MAX				(KNOT_TYPE_ID_COMMAND+1)
+
 #define KNOT_TYPE_ID_RESERVED				0xFFFF
 
 // definition of measurement units
@@ -103,11 +116,11 @@
 #define KNOT_UNIT_ENERGY_KCAL				0x06
 
 // definition of value type
-#define KNOT_VALUE_TYPE_INT		0x01
-#define KNOT_VALUE_TYPE_FLOAT		0x02
-#define KNOT_VALUE_TYPE_BOOL		0x03
-#define KNOT_VALUE_TYPE_RAW		0x04
-#define KNOT_VALUE_TYPE_MIN		KNOT_VALUE_TYPE_INT
-#define KNOT_VALUE_TYPE_MAX		KNOT_VALUE_TYPE_RAW
+#define KNOT_VALUE_TYPE_INT				0x01
+#define KNOT_VALUE_TYPE_FLOAT				0x02
+#define KNOT_VALUE_TYPE_BOOL				0x03
+#define KNOT_VALUE_TYPE_RAW				0x04
+#define KNOT_VALUE_TYPE_MIN				KNOT_VALUE_TYPE_INT
+#define KNOT_VALUE_TYPE_MAX				KNOT_VALUE_TYPE_RAW
 
 #endif // KNOT_TYPES_H
